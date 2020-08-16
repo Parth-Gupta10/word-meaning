@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    body {
+      text-align: center;
+      padding: 10px;
+      width: 250px;
+    }
+
+    .form-control {
+      display: block;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 18px;
+      font-size: 1rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      width: 95%;
+      padding-left: 10px;
+    }
+
+    .form-control:focus {
+      color: #495057;
+      background-color: #fff;
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+      width: 100%;
+      text-align: center;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .btn:hover {
+      color: #fff;
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    #error {
+      display: none;
+      color: red;
+      font-size: 0.9rem;
+    }
+
+    #meaning {
+      padding-left: 5px;
+      text-align: left;
+      display: none;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" name="selectedWord" class="form-control" id="wordToSearch">
+  <div>
+    <ul id='meaning'>
+    </ul>
+  </div>
+
+  <div id="error">
+
+  </div>
+  <button id="submit" class="btn">Find</button>
+
+  <!-- JQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

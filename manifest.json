@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Wordly",
+  "version": "1.0",
+  "homepage_url": "https://github.com/Parth-Gupta10/word-meaning",
+  "description": "Find meanings of selected / highlighted words",
+  "permissions": ["activeTab", "declarativeContent"],
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
+
+  "page_action": {
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png"
+    },
+    "default_title": "Press Alt + S to search selected / highlighted word",
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "commands": {
+    "_execute_page_action": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "Opens hello.html"
+    }
+  },
+
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
