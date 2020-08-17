@@ -17,9 +17,30 @@ chrome.tabs.executeScript({
   }
 );
 
+document.addEventListener('keydown', key => {
+    let code = key.keyCode;
+    if(code == 13){
+        console.log("Enter key pressed");
+        if (wordToSearch.val() === "") {
+          meaning.empty();
+          error.css('display', 'block');
+          error.text('Please enter a word');
+        } else {
+          findBtn.click();
+        }
+    }
+});
+
+
 findBtn.click(() => {
   meaning.empty();
-  handleSubmit();
+  if (wordToSearch.val() === "") {
+    meaning.empty();
+    error.css('display', 'block');
+    error.text('Please enter a word');
+  } else {
+    handleSubmit();
+  }
 })
 
 function handleSubmit() {
@@ -40,6 +61,8 @@ function handleSubmit() {
 
       } else {
         error.css('display', 'none');
+        meaning.append('Searching ...');
+        meaning.empty();
         for (var i = 0; i < data.length; i++) {
           let txtMain = `<li>
             <strong style="text-transform: capitalize">${data[i].word}</strong><sup>${i + 1}</sup>
